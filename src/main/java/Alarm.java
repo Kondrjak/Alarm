@@ -1,4 +1,5 @@
 public class Alarm {
+
     public static String standardAlarm(int n){
         return generalAlarm(n, 30);
     }
@@ -16,15 +17,16 @@ public class Alarm {
     public static String switchAlarm(int n, String alarmstufe){
         switch (alarmstufe){
             case "rot":
-                generalAlarm(n,0);
-
+                return generalAlarm(n,0);
             case "gelb":
-                generalAlarm(n,30);
+                return generalAlarm(n,30);
             case "grün":
-                generalAlarm(n,60);
+                return generalAlarm(n,60);
             default:
                 return "Fehler: Alarmstufe nicht bekannt";
         }
     }
+
+
 
 }
