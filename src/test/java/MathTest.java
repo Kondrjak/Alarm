@@ -1,9 +1,8 @@
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-public class AlarmTest {
+public class MathTest {
 
     @ParameterizedTest
     @CsvSource({
@@ -12,11 +11,23 @@ public class AlarmTest {
             "3, 6"}
 
     )
-    public void checkAllowedNumberOfPersons(String threatLevel, int numberOfPeople, String expected){
+    public void someKnownValues(int n, int expected){
         //When
-        String actual = Alarm.switchAlarm(numberOfPeople, threatLevel);
+        int actual = Math.fac(n);
         //Then
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(actual, expected);
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "-1",
+            "-2",
+            "-1000"
+    })
+
+    public void throwExceptWhenNonNegative(int n){
+        Assertions.assertThrows(ArithmeticException.class,
+                ()->Math.fac(n));
     }
 
 }

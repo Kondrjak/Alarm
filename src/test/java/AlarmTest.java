@@ -10,7 +10,7 @@ public class AlarmTest {
             "rot, 30, Alarm: Zu viele Personen!"
     })
 
-    public void checkAllowedNumberOfPersons(String threatLevel, int numberOfPeople, String expected){
+    void checkAllowedNumberOfPersons(String threatLevel, int numberOfPeople, String expected){
         //When
         String actual = Alarm.switchAlarm(numberOfPeople, threatLevel);
         //Then

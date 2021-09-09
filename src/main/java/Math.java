@@ -3,12 +3,17 @@ public class Math {
         if(n<0){
             throw new ArithmeticException(
                     "Argument must be non negative.");
-        } else if(n==0){
-            return 1;
         } else{
             int out = 1;
-            for(int i=1; i<=n){
+            /*//
+            for(int i=1; i<=n; i++){
                 out *= i;
+            }
+            //*/
+            int i=1;
+            while(i<=n){
+                out *= i;
+                i++;
             }
             return out;
         }
